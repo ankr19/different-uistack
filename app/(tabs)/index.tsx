@@ -6,6 +6,7 @@ import ParallaxScrollView from '@/components/parallax-scroll-view';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { Link } from 'expo-router';
+import { Button, ButtonSpinner, ButtonText } from '@/components/ui/button';
 
 export default function HomeScreen() {
   return (
@@ -17,7 +18,7 @@ export default function HomeScreen() {
           style={styles.reactLogo}
         />
       }>
-        <Text className='text-blue-800 text-3xl'>Hello </Text>
+      <Text className='text-blue-800 text-3xl'>Hello </Text>
       <ThemedView style={styles.titleContainer}>
         <ThemedText type="title">Welcome!</ThemedText>
         <HelloWave />
@@ -75,6 +76,13 @@ export default function HomeScreen() {
           <ThemedText type="defaultSemiBold">app-example</ThemedText>.
         </ThemedText>
       </ThemedView>
+
+      <Button className="px-3 py-2 bg-blue-600 rounded-lg">
+        <ButtonSpinner color="white" />
+        <ButtonText className="font-medium text-sm">
+          Please wait...
+        </ButtonText>
+      </Button>
     </ParallaxScrollView>
   );
 }
