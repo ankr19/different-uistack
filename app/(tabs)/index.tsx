@@ -7,6 +7,7 @@ import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { Link } from 'expo-router';
 import { Button, ButtonSpinner, ButtonText } from '@/components/ui/button';
+import { Input, InputField } from '@/components/ui/input';
 
 export default function HomeScreen() {
   return (
@@ -77,12 +78,23 @@ export default function HomeScreen() {
         </ThemedText>
       </ThemedView>
 
-      <Button className="px-3 py-2 bg-blue-600 rounded-lg">
+      <Button className="px-3 py-2 bg-pink-600 rounded-lg hover:bg-pink-700">
         <ButtonSpinner color="white" />
         <ButtonText className="font-medium text-sm">
           Please wait...
         </ButtonText>
       </Button>
+
+      <Input
+        variant="underlined"
+        size="md"
+        isDisabled={false}
+        isInvalid={false}
+        isReadOnly={false}
+        className='text-white bg-purple-300'
+      >
+        <InputField placeholder="Enter Text here..." />
+      </Input>
     </ParallaxScrollView>
   );
 }
